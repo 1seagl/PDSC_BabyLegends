@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+        #MAP {position: absolute; top: 0; bottom: 0; left: 0; right: 0} 
+    </style> 
+</head>
+<body>
+    <div id = "MAP"></div>
+    <script>
+        var map = L.map("MAP").setView([12.8797, 121.7740], 7);
+        L.tileLayer('https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=qI2az0aELdugKC6Y9XdX', {
+            attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+        }).addTo(map)
+
+        
+
+    </script>
+    <script>
+        maptilersdk.config.apiKey = 'qI2az0aELdugKC6Y9XdX';
+        var bounds = [
+        [4.600, 119.300], // Southwest coordinates
+        [21.120, 121.940] // Northeast coordinates
+    ];
+
+    var map = new maptilersdk.map({
+        container: 'map',
+        style: maptilersdk.MapStyle.STREETS,
+        center: [12.8797, 121.7740],
+        zoom: 7,
+        maxBounds: bounds // Sets bounds as max
+    });
+    </script>
+</body>
+
+</html>
